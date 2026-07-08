@@ -1,0 +1,17 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["./tests/setup.ts"],
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "<rootDir>/tests/__mocks__/styleMock.js",
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
+  "testMatch": ["**/tests/**/*.test.{ts,tsx}"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": ["ts-jest", {
+      "tsconfig": {
+        "jsx": "react-jsx"
+      }
+    }]
+  }
+}

@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   MatchDay Copilot — Global Styles
+   World Cup 2026 Theme
+   ============================================= */
+
+@layer base {
+  :root {
+    --color-pitch: #1a7a2e;
+    --color-gold: #D4AF37;
+    --color-navy: #0d1b3e;
+    --color-crowd-normal: #22c55e;
+    --color-crowd-busy: #f59e0b;
+    --color-crowd-critical: #ef4444;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-navy-900 text-white min-h-screen;
+    background-image: radial-gradient(ellipse at top, rgba(26, 122, 46, 0.08) 0%, transparent 60%);
+  }
+
+  /* High contrast mode */
+  .high-contrast {
+    --tw-bg-opacity: 1 !important;
+    filter: contrast(1.4) !important;
+  }
+
+  .high-contrast * {
+    border-color: white !important;
+  }
+
+  /* Large text mode */
+  .large-text {
+    font-size: 1.125rem !important;
+  }
+
+  .large-text .text-sm { font-size: 0.9rem !important; }
+  .large-text .text-xs { font-size: 0.8rem !important; }
+  .large-text h1, .large-text .text-4xl { font-size: 3rem !important; }
+  .large-text h2, .large-text .text-2xl { font-size: 2rem !important; }
+  .large-text h3, .large-text .text-xl { font-size: 1.6rem !important; }
+
+  /* Focus styles for keyboard navigation */
+  :focus-visible {
+    outline: 3px solid #D4AF37;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(13, 27, 62, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.7);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-navy-800/80 backdrop-blur-md border border-white/10 rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Scoreboard stat card */
+  .stat-card {
+    @apply glass-card p-4 relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-5;
+    background: linear-gradient(135deg, var(--color-gold) 0%, transparent 60%);
+  }
+
+  /* Gold accent button */
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-500 to-gold-400 text-navy-900 font-bold px-6 py-3 rounded-xl
+           hover:from-gold-400 hover:to-gold-300 active:scale-95
+           transition-all duration-200 cursor-pointer;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .btn-gold:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 2px;
+  }
+
+  /* Pitch green button */
+  .btn-pitch {
+    @apply bg-pitch-700 text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-pitch-600 active:scale-95
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* Crowd density indicator */
+  .density-bar {
+    @apply h-2 rounded-full overflow-hidden bg-navy-700;
+  }
+
+  /* Chat bubble */
+  .chat-bubble-user {
+    @apply bg-pitch-700/80 text-white rounded-2xl rounded-br-sm px-4 py-3 max-w-xs ml-auto;
+  }
+
+  .chat-bubble-assistant {
+    @apply bg-navy-700/80 text-white rounded-2xl rounded-bl-sm px-4 py-3 max-w-sm;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  /* Headline font */
+  .font-headline {
+    font-family: 'Anton', Impact, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-display {
+    font-family: 'Oswald', Anton, sans-serif;
+  }
+
+  /* Status badge */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .status-normal { @apply bg-pitch-700/30 text-pitch-300 border border-pitch-600/30; }
+  .status-busy { @apply bg-amber-900/30 text-amber-300 border border-amber-600/30; }
+  .status-critical { @apply bg-red-900/30 text-red-300 border border-red-600/30; }
+
+  /* Animate shimmer for loading states */
+  .skeleton {
+    @apply bg-navy-700 rounded;
+    background: linear-gradient(90deg, #0d1b3e 25%, #1e3068 50%, #0d1b3e 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Map zone overlay */
+  .map-zone {
+    @apply absolute rounded-lg transition-all duration-500 cursor-pointer;
+  }
+
+  /* Pitch line pattern overlay */
+  .pitch-lines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(255, 255, 255, 0.03) 28px,
+      rgba(255, 255, 255, 0.03) 30px
+    );
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #D4AF37, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-pitch-gradient {
+    background: linear-gradient(135deg, #4ade80, #1a7a2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow utilities */
+  .glow-gold { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+  .glow-pitch { box-shadow: 0 0 20px rgba(26, 122, 46, 0.4); }
+  .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+
+  /* Backdrop blur variants */
+  .backdrop-blur-glass { backdrop-filter: blur(16px) saturate(180%); }
+}
