@@ -1,0 +1,144 @@
+[
+  {
+    "id": "faq-001",
+    "question": "Where is the nearest accessible restroom to Gate D?",
+    "answer": "The nearest accessible restroom to Gate D is Restroom Block D1, located approximately 30 meters north of the Gate D entrance. It features wide doorways, grab bars, and a baby changing station. Follow the blue accessibility signs from the gate.",
+    "category": "wayfinding",
+    "tags": ["restroom", "accessible", "gate-d", "wheelchair"],
+    "languages": {
+      "es": {
+        "question": "¿Dónde está el baño accesible más cercano a la Puerta D?",
+        "answer": "El baño accesible más cercano a la Puerta D es el Bloque D1, ubicado aproximadamente 30 metros al norte de la entrada de la Puerta D. Cuenta con puertas anchas, barras de apoyo y cambiador para bebés. Siga las señales azules de accesibilidad desde la puerta."
+      },
+      "fr": {
+        "question": "Où se trouve les toilettes accessibles les plus proches de la porte D ?",
+        "answer": "Les toilettes accessibles les plus proches de la porte D sont le bloc D1, à environ 30 mètres au nord de l'entrée de la porte D. Elles disposent de larges portes, de barres d'appui et d'une table à langer. Suivez les panneaux d'accessibilité bleus depuis la porte."
+      },
+      "pt": {
+        "question": "Onde fica o banheiro acessível mais próximo da Portão D?",
+        "answer": "O banheiro acessível mais próximo do Portão D é o Bloco D1, localizado aproximadamente 30 metros ao norte da entrada do Portão D. Possui portas largas, barras de apoio e fraldário. Siga as placas de acessibilidade azuis a partir da portão."
+      },
+      "ar": {
+        "question": "أين أقرب دورة مياه مخصصة لذوي الاحتياجات الخاصة بالقرب من البوابة د؟",
+        "answer": "أقرب دورة مياه مخصصة لذوي الاحتياجات الخاصة بالقرب من البوابة (د) هي الكتلة D1، وتقع على بعد نحو 30 مترًا شمال مدخل البوابة (د). وتتوفر فيها أبواب عريضة وقضبان دعم وطاولة تغيير الحفاضات. اتبع اللافتات الزرقاء للوصول إليها."
+      }
+    }
+  },
+  {
+    "id": "faq-002",
+    "question": "How do I get to the stadium from downtown without a car?",
+    "answer": "You have three great options: (1) Metro Line 1 from Downtown Central — arrives at Stadium North Station in about 12 minutes, running every 4 minutes. (2) Metro Line 3 from West Suburbs — arrives at Stadium South Station in 9 minutes. (3) Official Shuttle from North Park & Ride — runs every 10 minutes, fully accessible. The metro is the fastest and most eco-friendly option.",
+    "category": "transport",
+    "tags": ["transport", "metro", "shuttle", "downtown", "no-car", "eco"],
+    "languages": {
+      "es": { "question": "¿Cómo llego al estadio desde el centro sin auto?", "answer": "Tiene tres grandes opciones: (1) Metro Línea 1 desde el Centro — llega a la Estación Norte del Estadio en unos 12 minutos, cada 4 minutos. (2) Metro Línea 3 — llega a la Estación Sur en 9 minutos. (3) Autobús oficial desde el aparcamiento norte — cada 10 minutos, totalmente accesible." },
+      "fr": { "question": "Comment rejoindre le stade depuis le centre-ville sans voiture ?", "answer": "Trois options s'offrent à vous : (1) Métro Ligne 1 depuis le Centre-Ville — arrivée à la Station Nord du Stade en 12 minutes, toutes les 4 minutes. (2) Métro Ligne 3 — arrivée à la Station Sud en 9 minutes. (3) Navette officielle — toutes les 10 minutes, entièrement accessible." },
+      "pt": { "question": "Como chego ao estádio a partir do centro sem carro?", "answer": "Você tem três ótimas opções: (1) Metrô Linha 1 do Centro — chega à Estação Norte do Estádio em 12 minutos, a cada 4 minutos. (2) Metrô Linha 3 — chega à Estação Sul em 9 minutos. (3) Ônibus oficial — a cada 10 minutos, totalmente acessível." },
+      "ar": { "question": "كيف أصل إلى الملعب من وسط المدينة دون سيارة؟", "answer": "لديك ثلاثة خيارات رائعة: (1) مترو الخط 1 من وسط المدينة — يصل إلى محطة شمال الملعب في 12 دقيقة، كل 4 دقائق. (2) مترو الخط 3 — يصل إلى محطة الجنوب في 9 دقائق. (3) حافلة مكوكية رسمية من موقف السيارات الشمالي — كل 10 دقائق، مهيأة للجميع." }
+    }
+  },
+  {
+    "id": "faq-003",
+    "question": "Is it crowded near the north entrance right now?",
+    "answer": "The North Stand (Gates A & B) is currently at high capacity — approximately 90% occupancy. Wait times at Gate A are around 28 minutes and increasing. We recommend using Gate D (South Stand) which has a 5-minute wait, or Gate C (East Stand) with an 8-minute wait. Both are less crowded alternatives.",
+    "category": "crowd",
+    "tags": ["crowd", "north", "gate-a", "gate-b", "wait-time", "real-time"],
+    "languages": {
+      "es": { "question": "¿Está concurrida la entrada norte ahora mismo?", "answer": "La Tribuna Norte (Puertas A y B) está actualmente al 90% de capacidad. Los tiempos de espera en la Puerta A son de unos 28 minutos. Recomendamos usar la Puerta D (Tribuna Sur) con 5 minutos de espera, o la Puerta C (Tribuna Este) con 8 minutos." },
+      "fr": { "question": "Y a-t-il beaucoup de monde à l'entrée nord en ce moment ?", "answer": "La Tribune Nord (Portes A et B) est actuellement à 90% de sa capacité. Les temps d'attente à la Porte A sont d'environ 28 minutes. Nous recommandons la Porte D (Tribune Sud) avec 5 minutes d'attente, ou la Porte C (Tribune Est) avec 8 minutes." },
+      "pt": { "question": "Está lotado perto da entrada norte agora?", "answer": "A Tribuna Norte (Portões A e B) está atualmente com 90% de ocupação. Os tempos de espera no Portão A são de cerca de 28 minutos. Recomendamos usar o Portão D (Tribuna Sul) com 5 minutos de espera, ou o Portão C (Tribuna Leste) com 8 minutos." },
+      "ar": { "question": "هل المدخل الشمالي مزدحم الآن؟", "answer": "المدرج الشمالي (البوابتان أ وب) يعمل حاليًا بطاقة 90%. أوقات الانتظار عند البوابة (أ) نحو 28 دقيقة وفي تزايد. نوصي باستخدام البوابة (د) بالجنوب - 5 دقائق انتظار، أو البوابة (ج) بالشرق - 8 دقائق." }
+    }
+  },
+  {
+    "id": "faq-004",
+    "question": "What are the bag policy rules?",
+    "answer": "Bags are limited to one clear plastic bag (max 30cm x 30cm x 15cm) or one small clutch purse. No backpacks, large purses, or hard-sided coolers. All bags are subject to search. Medical equipment and baby supplies are permitted — please use the dedicated accessibility lane at your gate.",
+    "category": "policy",
+    "tags": ["bag", "policy", "security", "rules"],
+    "languages": {
+      "es": { "question": "¿Cuáles son las reglas sobre bolsos?", "answer": "Las bolsas están limitadas a una bolsa de plástico transparente (máx. 30x30x15 cm) o un pequeño bolso de mano. No se permiten mochilas ni bolsos grandes. Todos los bolsos serán inspeccionados. El equipo médico y los artículos para bebés están permitidos." },
+      "fr": { "question": "Quelle est la politique concernant les sacs ?", "answer": "Les sacs sont limités à un sac en plastique transparent (max 30x30x15 cm) ou une petite pochette. Pas de sacs à dos ni de grands sacs à main. Tous les sacs seront fouillés. Le matériel médical et les affaires pour bébés sont autorisés." },
+      "pt": { "question": "Quais são as regras para bolsas?", "answer": "As bolsas são limitadas a uma bolsa de plástico transparente (máx. 30x30x15 cm) ou uma pequena bolsa de mão. Sem mochilas ou bolsas grandes. Todas as bolsas serão revistadas. Equipamentos médicos e itens para bebês são permitidos." },
+      "ar": { "question": "ما هي قواعد حقائب اليد؟", "answer": "الحقائب مقتصرة على حقيبة بلاستيكية شفافة واحدة (أقصى 30×30×15 سم) أو محفظة صغيرة. لا يُسمح بالحقائب الظهرية أو الكبيرة. ستُفتَّش جميع الحقائب. يُسمح بالمعدات الطبية ومستلزمات الأطفال." }
+    }
+  },
+  {
+    "id": "faq-005",
+    "question": "Where can I find a wheelchair-accessible route to Section 214?",
+    "answer": "Section 214 is in the East Stand. The best accessible route: Enter through Gate C (East entrance, fully accessible with elevator and ramp). Take the elevator to Level 2, then follow the blue accessibility signs toward sections 210–220. Staff will assist you — look for volunteers in green vests. The entire route avoids stairs.",
+    "category": "accessibility",
+    "tags": ["wheelchair", "accessible", "route", "section-214", "east-stand", "elevator"],
+    "languages": {
+      "es": { "question": "¿Dónde puedo encontrar una ruta accesible para sillas de ruedas a la Sección 214?", "answer": "La Sección 214 está en la Tribuna Este. La mejor ruta accesible: Entrar por la Puerta C (entrada este, totalmente accesible con ascensor y rampa). Tome el ascensor hasta el Nivel 2, luego siga las señales de accesibilidad azules hacia las secciones 210-220. El personal le ayudará." },
+      "fr": { "question": "Où puis-je trouver un itinéraire accessible en fauteuil roulant vers la Section 214 ?", "answer": "La Section 214 se trouve dans la Tribune Est. Le meilleur itinéraire accessible : Entrez par la Porte C (entrée est, entièrement accessible avec ascenseur et rampe). Prenez l'ascenseur jusqu'au Niveau 2, puis suivez les panneaux d'accessibilité bleus vers les sections 210-220." },
+      "pt": { "question": "Onde posso encontrar uma rota acessível para cadeirantes até a Seção 214?", "answer": "A Seção 214 fica na Tribuna Leste. A melhor rota acessível: Entre pelo Portão C (entrada leste, totalmente acessível com elevador e rampa). Pegue o elevador até o Nível 2, depois siga as placas de acessibilidade azuis para as seções 210-220." },
+      "ar": { "question": "أين يمكنني إيجاد مسار ميسّر لكراسي الاطارات إلى الجزء 214؟", "answer": "الجزء 214 في المدرج الشرقي. أفضل مسار ميسّر: ادخل عبر البوابة (ج) (مدخل شرقي مهيأ بالكامل بمصعد ومنحدر). خذ المصعد إلى المستوى 2، ثم اتبع اللافتات الزرقاء نحو الأجزاء 210-220. سيساعدك الموظفون." }
+    }
+  },
+  {
+    "id": "faq-006",
+    "question": "What food and drink options are available?",
+    "answer": "Food is available at all concourse levels. Key options: North Food Court (sections 100-120 area) — burgers, local cuisine, vegetarian. East Food Hall (near Gate C) — international food, halal-certified options, allergy-friendly menu. South Concourse Food (near Gate D) — snacks, drinks, ice cream. All stands accept contactless payments. Alcohol is sold in designated areas only (Sections 200-215).",
+    "category": "food",
+    "tags": ["food", "drink", "vegetarian", "halal", "concessions"],
+    "languages": {
+      "es": { "question": "¿Qué opciones de comida y bebida están disponibles?", "answer": "Hay comida en todos los pisos del concurso. Opciones clave: Patio de Comidas Norte — hamburguesas, cocina local, opciones vegetarianas. Sala de Comidas Este — comida internacional, opciones halal, menú para alérgicos. Todos los puestos aceptan pagos sin contacto." },
+      "fr": { "question": "Quelles options de restauration sont disponibles ?", "answer": "La restauration est disponible à tous les niveaux. Options principales : Food Court Nord — burgers, cuisine locale, végétarien. Food Hall Est — cuisine internationale, options halal, menu sans allergènes. Toutes les échoppes acceptent les paiements sans contact." },
+      "pt": { "question": "Quais opções de comida e bebida estão disponíveis?", "answer": "Há comida em todos os andares. Opções principais: Praça de Alimentação Norte — hambúrgueres, culinária local, opções vegetarianas. Food Hall Leste — comida internacional, opções halal, cardápio para alérgicos. Todos os pontos aceitam pagamentos por aproximação." },
+      "ar": { "question": "ما هي خيارات الطعام والشراب المتاحة؟", "answer": "يتوفر الطعام في جميع طوابق المنشأة. الخيارات الرئيسية: باحة الطعام الشمالية — برغر، مأكولات محلية، خيارات نباتية. قاعة الطعام الشرقية — مأكولات دولية، خيارات حلال، قائمة لحساسية الطعام. جميع الكشكات تقبل الدفع اللاتلامسي." }
+    }
+  },
+  {
+    "id": "faq-007",
+    "question": "Where is the nearest first aid station?",
+    "answer": "First Aid posts are located at every gate: Post A (near Gate A), Post C (near Gate C), and Post D (near Gate D) are the largest. For medical emergencies, call the stadium emergency line or find any steward in a red vest. All first aid posts are accessible. There is also a main Medical Centre at the East Concourse near Gate C.",
+    "category": "medical",
+    "tags": ["first-aid", "medical", "emergency", "health"],
+    "languages": {
+      "es": { "question": "¿Dónde está la estación de primeros auxilios más cercana?", "answer": "Los puestos de primeros auxilios están en cada puerta: Puesto A (cerca de la Puerta A), Puesto C (cerca de la Puerta C) y Puesto D (cerca de la Puerta D). Para emergencias, llame a la línea de emergencias del estadio o busque cualquier supervisor con chaleco rojo." },
+      "fr": { "question": "Où se trouve le poste de premiers secours le plus proche ?", "answer": "Des postes de premiers secours sont situés à chaque porte : Poste A (près de la Porte A), Poste C (près de la Porte C) et Poste D (près de la Porte D). Pour les urgences médicales, appelez la ligne d'urgence du stade ou trouvez un steward en gilet rouge." },
+      "pt": { "question": "Onde fica o posto de primeiros socorros mais próximo?", "answer": "Postos de primeiros socorros estão localizados em cada portão: Posto A (perto do Portão A), Posto C (perto do Portão C) e Posto D (perto do Portão D). Para emergências médicas, ligue para a linha de emergência do estádio ou encontre qualquer supervisor com colete vermelho." },
+      "ar": { "question": "أين أقرب مركز إسعافات أولية؟", "answer": "توجد مراكز إسعافات أولية عند كل بوابة: المركز (أ) بالقرب من البوابة أ، المركز (ج) بالقرب من البوابة ج، المركز (د) بالقرب من البوابة د. للطوارئ الطبية، اتصل بخط الطوارئ في الملعب أو ابحث عن أي مشرف يرتدي سترة حمراء." }
+    }
+  },
+  {
+    "id": "faq-008",
+    "question": "Can I re-enter the stadium if I leave?",
+    "answer": "Yes, re-entry is permitted up to 30 minutes before kickoff. After kickoff, re-entry is not permitted until half-time. To re-enter, use the same gate as your original entry and present your ticket. Stamp your hand or collect a wristband at the exit gate to simplify re-entry.",
+    "category": "policy",
+    "tags": ["re-entry", "policy", "rules", "exit"],
+    "languages": {
+      "es": { "question": "¿Puedo volver a entrar al estadio si salgo?", "answer": "Sí, la reentrada está permitida hasta 30 minutos antes del inicio. Después del inicio, la reentrada no está permitida hasta el descanso. Utilice la misma puerta de entrada original y presente su ticket." },
+      "fr": { "question": "Puis-je rentrer dans le stade si je sors ?", "answer": "Oui, la rentrée est autorisée jusqu'à 30 minutes avant le coup d'envoi. Après le coup d'envoi, la rentrée n'est pas autorisée jusqu'à la mi-temps. Utilisez la même porte qu'à l'entrée et présentez votre billet." },
+      "pt": { "question": "Posso entrar novamente no estádio se sair?", "answer": "Sim, a reentrada é permitida até 30 minutos antes do início. Após o início, a reentrada não é permitida até o intervalo. Use o mesmo portão da entrada original e apresente seu ingresso." },
+      "ar": { "question": "هل يمكنني إعادة الدخول إلى الملعب إذا خرجت؟", "answer": "نعم، يُسمح بإعادة الدخول حتى 30 دقيقة قبل انطلاق المباراة. بعد الانطلاق، لا يُسمح بإعادة الدخول حتى وقت الاستراحة. استخدم نفس البوابة التي دخلت منها وأبرز تذكرتك." }
+    }
+  },
+  {
+    "id": "faq-009",
+    "question": "Is there a lost and found?",
+    "answer": "The Lost and Found office is located at Gate A Fan Information Desk (North Stand) and is open 2 hours before and 2 hours after the match. If you lose an item during the match, report it to any steward or visit the Fan Information Desk. Items are held for 30 days after each match.",
+    "category": "services",
+    "tags": ["lost-and-found", "lost", "services"],
+    "languages": {
+      "es": { "question": "¿Hay una oficina de objetos perdidos?", "answer": "La oficina de objetos perdidos está en el Mostrador de Información al Fanático en la Puerta A y abre 2 horas antes y 2 horas después del partido." },
+      "fr": { "question": "Y a-t-il un bureau des objets trouvés ?", "answer": "Le bureau des objets trouvés est au Bureau d'information des fans à la Porte A, ouvert 2 heures avant et après le match." },
+      "pt": { "question": "Há uma seção de achados e perdidos?", "answer": "O escritório de achados e perdidos fica no Balcão de Informações para Torcedores no Portão A e abre 2 horas antes e depois da partida." },
+      "ar": { "question": "هل يوجد مكتب للمفقودات؟", "answer": "مكتب المفقودات موجود في مكتب معلومات المشجعين عند البوابة (أ) ويفتح قبل ساعتين وبعد ساعتين من المباراة." }
+    }
+  },
+  {
+    "id": "faq-010",
+    "question": "What items are prohibited in the stadium?",
+    "answer": "Prohibited items include: weapons of any kind, large umbrellas, laser pointers, fireworks/flares, drones, professional cameras (lens > 75mm), outside food and drinks (sealed water bottles under 500ml are allowed), and items that may obstruct views. Security will confiscate prohibited items at the gate.",
+    "category": "policy",
+    "tags": ["prohibited", "banned", "security", "rules", "policy"],
+    "languages": {
+      "es": { "question": "¿Qué artículos están prohibidos en el estadio?", "answer": "Artículos prohibidos incluyen: armas de cualquier tipo, paraguas grandes, punteros láser, fuegos artificiales, drones, cámaras profesionales (objetivo > 75mm), y comida y bebida exterior (se permiten botellas de agua selladas menores de 500ml)." },
+      "fr": { "question": "Quels articles sont interdits dans le stade ?", "answer": "Les articles interdits comprennent : armes de toute sorte, grands parapluies, pointeurs laser, feux d'artifice, drones, appareils photo professionnels (objectif > 75mm), et nourriture et boissons extérieures (bouteilles d'eau scellées de moins de 500ml autorisées)." },
+      "pt": { "question": "Quais itens são proibidos no estádio?", "answer": "Itens proibidos incluem: armas de qualquer tipo, guarda-chuvas grandes, ponteiros laser, fogos de artifício, drones, câmeras profissionais (lente > 75mm), e alimentos e bebidas externos (garrafas de água seladas abaixo de 500ml são permitidas)." },
+      "ar": { "question": "ما هي العناصر المحظورة في الملعب؟", "answer": "العناصر المحظورة تشمل: الأسلحة بجميع أنواعها، المظلات الكبيرة، المؤشرات الليزرية، الألعاب النارية، الطائرات المسيّرة، الكاميرات الاحترافية (عدسة أكبر من 75 مم)، والطعام والشراب من الخارج (يُسمح بزجاجات المياه المختومة أقل من 500 مل)." }
+    }
+  }
+]

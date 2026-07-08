@@ -1,0 +1,50 @@
+[
+  {
+    "id": "queue-gate-a",
+    "gateId": "gate-a",
+    "gateName": "Gate A",
+    "waitTimeMinutes": 28,
+    "trend": "increasing",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  },
+  {
+    "id": "queue-gate-b",
+    "gateId": "gate-b",
+    "gateName": "Gate B",
+    "waitTimeMinutes": 14,
+    "trend": "stable",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  },
+  {
+    "id": "queue-gate-c",
+    "gateId": "gate-c",
+    "gateName": "Gate C",
+    "waitTimeMinutes": 8,
+    "trend": "decreasing",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  },
+  {
+    "id": "queue-gate-d",
+    "gateId": "gate-d",
+    "gateName": "Gate D",
+    "waitTimeMinutes": 5,
+    "trend": "stable",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  },
+  {
+    "id": "queue-gate-e",
+    "gateId": "gate-e",
+    "gateName": "Gate E",
+    "waitTimeMinutes": 22,
+    "trend": "increasing",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  },
+  {
+    "id": "queue-gate-f",
+    "gateId": "gate-f",
+    "gateName": "Gate F (VIP)",
+    "waitTimeMinutes": 2,
+    "trend": "decreasing",
+    "lastUpdated": "2026-07-08T20:45:00Z"
+  }
+]

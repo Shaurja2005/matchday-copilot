@@ -1,0 +1,107 @@
+[
+  {
+    "id": "gate-a",
+    "name": "Gate A",
+    "label": "Gate A — North Stand",
+    "x": 50,
+    "y": 5,
+    "capacity": 5000,
+    "isAccessible": true,
+    "accessibleFeatures": ["ramp", "elevator", "priority lane", "tactile path"],
+    "linkedZoneIds": ["zone-north"],
+    "nearbyTransport": ["metro-1", "shuttle-north"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "Restroom Block A1", "isAccessible": true, "distanceMeters": 40 },
+      { "type": "food", "label": "North Food Court", "isAccessible": true, "distanceMeters": 80 },
+      { "type": "medical", "label": "First Aid Post A", "isAccessible": true, "distanceMeters": 60 },
+      { "type": "info", "label": "Fan Information Desk", "isAccessible": true, "distanceMeters": 20 }
+    ]
+  },
+  {
+    "id": "gate-b",
+    "name": "Gate B",
+    "label": "Gate B — North Stand",
+    "x": 65,
+    "y": 8,
+    "capacity": 4500,
+    "isAccessible": true,
+    "accessibleFeatures": ["ramp", "priority lane"],
+    "linkedZoneIds": ["zone-north", "zone-east"],
+    "nearbyTransport": ["metro-1", "bus-b2"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "Restroom Block B1", "isAccessible": false, "distanceMeters": 55 },
+      { "type": "food", "label": "Gate B Kiosk", "isAccessible": true, "distanceMeters": 30 },
+      { "type": "atm", "label": "ATM B1", "isAccessible": true, "distanceMeters": 25 }
+    ]
+  },
+  {
+    "id": "gate-c",
+    "name": "Gate C",
+    "label": "Gate C — East Stand",
+    "x": 92,
+    "y": 45,
+    "capacity": 6000,
+    "isAccessible": true,
+    "accessibleFeatures": ["elevator", "ramp", "audio assistance", "braille signage"],
+    "linkedZoneIds": ["zone-east"],
+    "nearbyTransport": ["metro-2", "rideshare-drop"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "Restroom Block C1", "isAccessible": true, "distanceMeters": 35 },
+      { "type": "restroom", "label": "Restroom Block C2", "isAccessible": true, "distanceMeters": 70 },
+      { "type": "food", "label": "East Food Hall", "isAccessible": true, "distanceMeters": 90 },
+      { "type": "shop", "label": "Official Merchandise", "isAccessible": true, "distanceMeters": 110 },
+      { "type": "medical", "label": "First Aid Post C", "isAccessible": true, "distanceMeters": 50 }
+    ]
+  },
+  {
+    "id": "gate-d",
+    "name": "Gate D",
+    "label": "Gate D — South Stand",
+    "x": 50,
+    "y": 92,
+    "capacity": 5500,
+    "isAccessible": true,
+    "accessibleFeatures": ["ramp", "priority lane", "elevator", "tactile path"],
+    "linkedZoneIds": ["zone-south"],
+    "nearbyTransport": ["shuttle-south", "metro-3"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "Restroom Block D1 (Accessible)", "isAccessible": true, "distanceMeters": 30 },
+      { "type": "food", "label": "South Concourse Food", "isAccessible": true, "distanceMeters": 65 },
+      { "type": "info", "label": "South Fan Help Desk", "isAccessible": true, "distanceMeters": 15 },
+      { "type": "medical", "label": "First Aid Post D", "isAccessible": true, "distanceMeters": 45 }
+    ]
+  },
+  {
+    "id": "gate-e",
+    "name": "Gate E",
+    "label": "Gate E — West Stand",
+    "x": 8,
+    "y": 45,
+    "capacity": 4800,
+    "isAccessible": false,
+    "accessibleFeatures": ["ramp"],
+    "linkedZoneIds": ["zone-west"],
+    "nearbyTransport": ["bus-w1", "shuttle-west"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "Restroom Block E1", "isAccessible": false, "distanceMeters": 50 },
+      { "type": "food", "label": "West Snack Bar", "isAccessible": true, "distanceMeters": 40 },
+      { "type": "atm", "label": "ATM W1", "isAccessible": false, "distanceMeters": 60 }
+    ]
+  },
+  {
+    "id": "gate-f",
+    "name": "Gate F",
+    "label": "Gate F — VIP / Media",
+    "x": 35,
+    "y": 5,
+    "capacity": 1200,
+    "isAccessible": true,
+    "accessibleFeatures": ["private elevator", "vip lounge", "dedicated ramp"],
+    "linkedZoneIds": ["zone-vip"],
+    "nearbyTransport": ["vip-shuttle"],
+    "nearbyFacilities": [
+      { "type": "restroom", "label": "VIP Lounge Restroom", "isAccessible": true, "distanceMeters": 15 },
+      { "type": "food", "label": "VIP Hospitality Suite", "isAccessible": true, "distanceMeters": 20 }
+    ]
+  }
+]

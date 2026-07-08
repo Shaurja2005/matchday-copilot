@@ -1,0 +1,112 @@
+[
+  {
+    "id": "metro-1",
+    "type": "metro",
+    "label": "Metro Line 1 — Stadium North Station",
+    "origin": "Downtown Central",
+    "etaMinutes": 12,
+    "crowdingLevel": "high",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.04,
+    "frequency": "Every 4 min"
+  },
+  {
+    "id": "metro-2",
+    "type": "metro",
+    "label": "Metro Line 2 — Stadium East Station",
+    "origin": "Airport / South Hub",
+    "etaMinutes": 18,
+    "crowdingLevel": "medium",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.04,
+    "frequency": "Every 6 min"
+  },
+  {
+    "id": "metro-3",
+    "type": "metro",
+    "label": "Metro Line 3 — Stadium South Station",
+    "origin": "West Suburbs",
+    "etaMinutes": 9,
+    "crowdingLevel": "low",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.04,
+    "frequency": "Every 5 min"
+  },
+  {
+    "id": "shuttle-north",
+    "type": "shuttle",
+    "label": "Official Shuttle — North Park & Ride",
+    "origin": "North Park & Ride Lot",
+    "etaMinutes": 15,
+    "crowdingLevel": "medium",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.08,
+    "frequency": "Every 10 min"
+  },
+  {
+    "id": "shuttle-south",
+    "type": "shuttle",
+    "label": "Official Shuttle — South Park & Ride",
+    "origin": "South Park & Ride Lot",
+    "etaMinutes": 10,
+    "crowdingLevel": "low",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.08,
+    "frequency": "Every 8 min"
+  },
+  {
+    "id": "shuttle-west",
+    "type": "shuttle",
+    "label": "Official Shuttle — West Fan Zone",
+    "origin": "West Fan Zone Hub",
+    "etaMinutes": 20,
+    "crowdingLevel": "low",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.08,
+    "frequency": "Every 12 min"
+  },
+  {
+    "id": "rideshare-drop",
+    "type": "rideshare",
+    "label": "Rideshare Drop-off Zone C",
+    "origin": "Various",
+    "etaMinutes": 0,
+    "crowdingLevel": "high",
+    "isAccessible": false,
+    "carbonKgPerPerson": 1.2,
+    "frequency": null
+  },
+  {
+    "id": "bus-b2",
+    "type": "bus",
+    "label": "Public Bus B2 — City Center",
+    "origin": "City Center Terminal",
+    "etaMinutes": 25,
+    "crowdingLevel": "low",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.06,
+    "frequency": "Every 15 min"
+  },
+  {
+    "id": "bus-w1",
+    "type": "bus",
+    "label": "Public Bus W1 — West District",
+    "origin": "West District Hub",
+    "etaMinutes": 22,
+    "crowdingLevel": "medium",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.06,
+    "frequency": "Every 15 min"
+  },
+  {
+    "id": "vip-shuttle",
+    "type": "shuttle",
+    "label": "VIP Executive Shuttle",
+    "origin": "VIP Hotel Zone",
+    "etaMinutes": 5,
+    "crowdingLevel": "low",
+    "isAccessible": true,
+    "carbonKgPerPerson": 0.15,
+    "frequency": "On demand"
+  }
+]
