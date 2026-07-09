@@ -1,7 +1,5 @@
 # MatchDay Copilot — FIFA World Cup 2026 GenAI Stadium Assistant
 
-> **Hackathon submission** — Fan Navigation, Crowd Management & Multilingual Real-Time Assistance
-
 ---
 
 ## Chosen Vertical
