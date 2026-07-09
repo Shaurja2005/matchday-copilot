@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Send, Loader2, Bot, User, Globe, Accessibility, Baby, Ticket } from 'lucide-react';
 import { chatApi } from '../../utils/api';
-import { ChatMessage, UserContext, SUPPORTED_LANGUAGES, Language } from '../../types';
+import { ChatMessage, SUPPORTED_LANGUAGES, Language } from '../../types';
 import { usePersona } from '../../contexts/PersonaContext';
 import ReactMarkdown from 'react-markdown';
 

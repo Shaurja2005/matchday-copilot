@@ -287,11 +287,11 @@ export function StaffPage(): JSX.Element {
                   <h2 className="font-display text-xl text-white">Multilingual Quick Reply</h2>
                 </div>
                 <p className="text-sm text-white/50">
-                  Type your note in English — AI will draft a polished reply in the fan's language.
+                  Type your note in English — AI will draft a polished reply in the fan&apos;s language.
                 </p>
 
                 <div>
-                  <label htmlFor="fan-msg" className="block text-sm text-white/70 mb-1">Fan's original message</label>
+                  <label htmlFor="fan-msg" className="block text-sm text-white/70 mb-1">Fan&apos;s original message</label>
                   <textarea
                     id="fan-msg"
                     value={fanMessage}
