@@ -7,7 +7,9 @@
 
 import { Zone, Queue, Gate, TransportRoute, Decision, Incident, ShiftBriefing, ChatMessage, UserContext } from '../types';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.DEV 
+  ? '/api' 
+  : 'https://matchday-copilot.onrender.com/api';
 
 async function fetchJSON<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, {
