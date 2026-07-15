@@ -96,6 +96,10 @@ export function StaffPage(): JSX.Element {
       <div className="relative bg-hero-gradient border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 pitch-lines" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-4 py-8">
+          <div className="inline-flex items-center gap-2 bg-pitch-500/20 border border-pitch-500/40 rounded-full px-3 py-1 mb-2">
+            <span className="w-2 h-2 rounded-full bg-pitch-400 animate-pulse" aria-hidden="true" />
+            <span className="text-pitch-300 text-xs font-semibold uppercase tracking-widest">Volunteer Dashboard</span>
+          </div>
           <p className="text-gold-400 text-sm font-medium uppercase tracking-widest mb-1">
             Staff & Volunteer View
           </p>
@@ -240,7 +244,7 @@ export function StaffPage(): JSX.Element {
             </div>
 
             {briefingLoading ? (
-              <div className="space-y-3" aria-busy="true" aria-label="Loading briefing">
+              <div role="status" aria-busy="true" aria-label="Loading briefing" className="space-y-3">
                 {[1, 2, 3].map((i) => <div key={i} className="skeleton h-24 rounded-xl" />)}
               </div>
             ) : briefing ? (

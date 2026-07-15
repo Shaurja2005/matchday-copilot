@@ -132,6 +132,19 @@ export async function evaluateCrowdDecisions(
 // GenAI recommendation generators (Stage 2)
 // -----------------------------------------------
 
+/**
+ * Stage 2 — GenAI recommendation for a queue alert.
+ *
+ * Finds alternative gates with shorter queues from the same snapshot and asks
+ * the GenAI to produce a single-sentence recommendation + rationale as JSON.
+ * Falls back to a deterministic string if the GenAI call fails or returns
+ * malformed JSON, so decisions are always created even without a live API key.
+ *
+ * @param gateName    - Name of the congested gate (e.g. "Gate A")
+ * @param waitMinutes - Current wait time in minutes
+ * @param trend       - Whether the queue is growing, stable, or shrinking
+ * @param snapshot    - Full crowd snapshot to find alternative gates
+ */
 async function generateQueueRecommendation(
   gateName: string,
   waitMinutes: number,
@@ -177,6 +190,16 @@ Return ONLY valid JSON.`;
   }
 }
 
+/**
+ * Stage 2 — GenAI recommendation for a density alert.
+ *
+ * Asks the GenAI to produce a one-sentence crowd management recommendation
+ * for a zone that has exceeded the density threshold, returned as JSON.
+ * Falls back to a deterministic string on any error.
+ *
+ * @param zone      - The zone that has exceeded the density threshold
+ * @param _snapshot - Full snapshot (reserved for future context enrichment)
+ */
 async function generateDensityRecommendation(
   zone: Zone,
   _snapshot: CrowdSnapshot

@@ -103,7 +103,7 @@ export function StadiumMap({ className = '', showAccessibleRoutes = false, highl
       <div className="relative w-full" style={{ paddingBottom: '100%' }}>
         <div className="absolute inset-0 p-3">
           {loading ? (
-            <div className="w-full h-full skeleton rounded-xl" aria-busy="true" aria-label="Loading map..." />
+            <div role="status" aria-busy="true" aria-label="Loading map..." className="w-full h-full skeleton rounded-xl" />
           ) : (
             <svg
               viewBox="0 0 100 100"

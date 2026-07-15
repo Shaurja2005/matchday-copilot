@@ -1,6 +1,35 @@
 /**
  * MatchDay Copilot — Organizer / Control-Room Prompt Templates
+ *
+ * All system prompts for organizer-persona GenAI calls are defined here as
+ * named constants (not inline strings in route handlers). This keeps prompt
+ * text auditable, searchable, and easy to update without touching routing logic.
  */
+
+// -----------------------------------------------
+// System prompt constants (used by route handlers)
+// -----------------------------------------------
+
+/**
+ * System prompt for the organizer situation summary endpoint.
+ * Sets the AI's role as a professional control-room intelligence system.
+ */
+export const ORGANIZER_SUMMARY_SYSTEM_PROMPT =
+  'You are MatchDay Copilot, a professional stadium operations intelligence system. You provide concise, factual situation summaries for senior venue organizers. All recommendations are for human review only.';
+
+/**
+ * System prompt for the organizer natural-language query endpoint.
+ * Instructs the AI to ground its answers in provided live data.
+ */
+export const ORGANIZER_QUERY_SYSTEM_PROMPT =
+  'You are MatchDay Copilot, an AI operations assistant. Answer questions by reasoning over the provided live data. Be direct and cite the data that supports your conclusion.';
+
+/**
+ * System prompt for the sustainability analysis endpoint.
+ * Scopes the AI to carbon-footprint and eco-transport analysis only.
+ */
+export const ORGANIZER_SUSTAINABILITY_SYSTEM_PROMPT =
+  'You are MatchDay Copilot, a sustainability analysis assistant for large events. Focus on transport carbon footprint, practical reduction suggestions, and fan communication strategies.';
 
 import { CrowdSnapshot, TransportRoute } from '../types';
 

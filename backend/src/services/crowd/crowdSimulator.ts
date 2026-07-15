@@ -68,12 +68,24 @@ function simulateTick(): void {
 // Start simulation loop
 let simulationInterval: ReturnType<typeof setInterval> | null = null;
 
+/**
+ * Start the crowd simulation loop. Runs a tick every SIMULATION_TICK_MS milliseconds.
+ * Idempotent — calling this a second time while the simulation is already running
+ * is a no-op, preventing duplicate intervals.
+ *
+ * In production, replace this interval with a real data ingestion pipeline
+ * (e.g., WebSocket subscription to turnstile / access-control APIs).
+ */
 export function startSimulation(): void {
   if (simulationInterval) return;
   simulationInterval = setInterval(simulateTick, SIMULATION_TICK_MS);
   logger.info(`Crowd simulation started (tick every ${SIMULATION_TICK_MS / 1000}s)`);
 }
 
+/**
+ * Stop the crowd simulation loop. Used during graceful server shutdown and in tests
+ * to prevent lingering interval handles that would block Jest from exiting.
+ */
 export function stopSimulation(): void {
   if (simulationInterval) {
     clearInterval(simulationInterval);
@@ -111,7 +123,14 @@ export function getCurrentQueues(): Queue[] {
   return [...currentQueues];
 }
 
-// For testing — inject specific state
+/**
+ * Inject a specific crowd state for unit testing.
+ * Allows tests to set precise zone densities and queue times without
+ * relying on the random simulation tick, making threshold boundary tests deterministic.
+ *
+ * @param zones  - Zone array to set as the current simulation state
+ * @param queues - Queue array to set as the current simulation state
+ */
 export function setSimulationState(zones: Zone[], queues: Queue[]): void {
   currentZones = [...zones];
   currentQueues = [...queues];

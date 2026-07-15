@@ -1,8 +1,15 @@
 /**
  * MatchDay Copilot — Staff API Routes
- * GET /api/staff/briefing — AI-generated shift briefing
- * POST /api/staff/incident — Create + triage an incident
- * GET /api/staff/incidents — List open incidents
+ *
+ * Endpoints:
+ *   GET   /api/staff/briefing          — AI-generated shift briefing
+ *   POST  /api/staff/incident          — Create and AI-triage a new incident
+ *   GET   /api/staff/incidents         — List all open incidents
+ *   PATCH /api/staff/incidents/:id     — Update incident status
+ *
+ * Design note: Incidents are stored in-memory for this demo. In production
+ * this would be a persistent database with an audit log. The in-memory store
+ * means incidents reset on server restart — this is intentional for the demo.
  */
 
 import { Router, Request, Response } from 'express';
@@ -18,23 +25,34 @@ import { logger } from '../utils/logger';
 
 const router = Router();
 
-// In-memory incident store (would be a DB in production)
+// In-memory incident store (would be a persistent DB in production)
 const incidents: Incident[] = [];
 
-// GET /api/staff/briefing — Generate AI shift briefing
+// -----------------------------------------------
+// GET /api/staff/briefing
+// -----------------------------------------------
+
+/**
+ * Generate an AI-powered shift briefing for staff at the start of their shift.
+ * The briefing summarizes crowd hotspots, queue concerns, and recommended actions
+ * based on the current live simulation snapshot.
+ *
+ * Always marked as human-review-required — the AI advises, staff decide.
+ */
 router.get('/briefing', chatRateLimiter, async (_req: Request, res: Response): Promise<void> => {
   try {
     const snapshot = getCrowdSnapshot();
     const prompt = buildShiftBriefingPrompt(snapshot);
 
     const response = await callGenAI({
-      systemPrompt: 'You are a professional stadium operations assistant.',
+      systemPrompt: 'You are a professional stadium operations assistant providing shift briefings to venue staff.',
       messages: [{ role: 'user', content: prompt }],
       persona: 'staff',
-      useCache: false,
+      useCache: false, // Never cache briefings — they must reflect current state
       maxTokens: 800,
     });
 
+    // Extract hotspots (zones above normal threshold) for structured display
     const hotspots = snapshot.zones
       .filter((z) => z.status !== 'normal')
       .map((z) => ({
@@ -59,7 +77,18 @@ router.get('/briefing', chatRateLimiter, async (_req: Request, res: Response): P
   }
 });
 
-// POST /api/staff/incident — Create and triage a new incident
+// -----------------------------------------------
+// POST /api/staff/incident
+// -----------------------------------------------
+
+/**
+ * Create a new incident report and immediately AI-triage it.
+ * AI triage provides a severity classification and recommended next step,
+ * but the staff member retains full authority over the actual response.
+ *
+ * Triage JSON parsing has a graceful fallback so a malformed AI response
+ * never prevents incident creation — safety-critical information is always saved.
+ */
 router.post(
   '/incident',
   chatRateLimiter,
@@ -87,13 +116,14 @@ router.post(
       const triagePrompt = buildIncidentTriagePrompt(description, gateId, zoneId);
 
       const response = await callGenAI({
-        systemPrompt: 'You are a professional incident triage system.',
+        systemPrompt: 'You are a professional incident triage system for a major football venue. Classify incidents accurately and concisely.',
         messages: [{ role: 'user', content: triagePrompt }],
         persona: 'staff',
         maxTokens: 400,
       });
 
-      // Parse AI triage response
+      // Parse AI triage response — falls back to safe defaults if JSON is malformed.
+      // This ensures a bad AI response never blocks incident creation.
       let triage = {
         severity: 'medium' as Incident['severity'],
         triageSummary: 'AI triage unavailable — human assessment required.',
@@ -139,12 +169,26 @@ router.post(
   }
 );
 
-// GET /api/staff/incidents — List all incidents
+// -----------------------------------------------
+// GET /api/staff/incidents
+// -----------------------------------------------
+
+/**
+ * List all incidents, sorted by most recent first.
+ * In production this would be a paginated database query with filtering by status.
+ */
 router.get('/incidents', apiRateLimiter, (_req: Request, res: Response) => {
   res.json({ incidents: incidents.sort((a, b) => b.reportedAt.localeCompare(a.reportedAt)) });
 });
 
-// PATCH /api/staff/incidents/:id — Update incident status
+// -----------------------------------------------
+// PATCH /api/staff/incidents/:id
+// -----------------------------------------------
+
+/**
+ * Update the status of an incident (open → in_progress → resolved).
+ * This is the primary human-in-the-loop action point after AI triage.
+ */
 router.patch(
   '/incidents/:id',
   apiRateLimiter,

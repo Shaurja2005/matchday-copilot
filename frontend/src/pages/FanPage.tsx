@@ -17,6 +17,10 @@ export function FanPage(): JSX.Element {
         <div className="relative max-w-7xl mx-auto px-4 py-8 sm:py-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
+              <div className="inline-flex items-center gap-2 bg-gold-500/20 border border-gold-500/40 rounded-full px-3 py-1 mb-2">
+                <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" aria-hidden="true" />
+                <span className="text-gold-400 text-xs font-semibold uppercase tracking-widest">Fan View</span>
+              </div>
               <p className="text-gold-400 text-sm font-medium uppercase tracking-widest mb-1">
                 FIFA World Cup 2026™ Stadium
               </p>
@@ -27,6 +31,7 @@ export function FanPage(): JSX.Element {
                 Get real-time wayfinding, queue updates, and answers in your language.
               </p>
             </div>
+
             {/* Accessibility quick-toggles */}
             <div className="flex items-center gap-2 flex-wrap">
               <button

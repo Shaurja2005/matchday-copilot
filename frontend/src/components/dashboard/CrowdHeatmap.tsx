@@ -58,13 +58,14 @@ export function CrowdHeatmap(): JSX.Element {
 
   if (loading) {
     return (
-      <div className="space-y-2" aria-busy="true" aria-label="Loading crowd data">
+      <div role="status" aria-busy="true" aria-label="Loading crowd data" className="space-y-2">
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="skeleton h-16 rounded-xl" />
         ))}
       </div>
     );
   }
+
 
   return (
     <div className="space-y-4" role="region" aria-label="Crowd density heatmap">

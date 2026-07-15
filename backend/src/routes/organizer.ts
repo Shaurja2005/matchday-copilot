@@ -1,8 +1,13 @@
 /**
  * MatchDay Copilot — Organizer API Routes
- * GET /api/organizer/summary — AI-generated situation summary
- * POST /api/organizer/query — Natural language query over mock data
- * GET /api/organizer/sustainability — Carbon footprint analysis
+ *
+ * Endpoints:
+ *   GET  /api/organizer/summary        — AI-generated control-room situation summary
+ *   POST /api/organizer/query          — Natural-language query over live data
+ *   GET  /api/organizer/sustainability — Transport carbon footprint analysis
+ *
+ * Design note: All system prompts are imported from the prompt template module
+ * (not defined inline) so that prompt text is auditable in one place.
  */
 
 import { Router, Request, Response } from 'express';
@@ -14,7 +19,16 @@ import {
   buildOrganizerSummaryPrompt,
   buildOrganizerQueryPrompt,
   buildSustainabilityPrompt,
+  ORGANIZER_SUMMARY_SYSTEM_PROMPT,
+  ORGANIZER_QUERY_SYSTEM_PROMPT,
+  ORGANIZER_SUSTAINABILITY_SYSTEM_PROMPT,
 } from '../prompts/organizerSummary';
+import {
+  computeOverallDensityPercent,
+  densityToStatus,
+  densityToMetricStatus,
+  queueTimeToMetricStatus,
+} from '../utils/crowdFormatter';
 import transportData from '../data/transport.json';
 import { TransportRoute } from '../types';
 import { logger } from '../utils/logger';
@@ -23,39 +37,47 @@ const router = Router();
 
 const transport = transportData as TransportRoute[];
 
-// GET /api/organizer/summary — AI-generated situation summary
+// -----------------------------------------------
+// GET /api/organizer/summary
+// -----------------------------------------------
+
+/**
+ * Generate an AI-powered control-room situation summary for senior organizers.
+ * Uses the current crowd snapshot + transport data to produce a structured
+ * overview including key metrics, top concerns, and recommended actions.
+ *
+ * GenAI role: narrative synthesis only — all decisions remain with human operators.
+ */
 router.get('/summary', chatRateLimiter, async (_req: Request, res: Response): Promise<void> => {
   try {
     const snapshot = getCrowdSnapshot();
     const prompt = buildOrganizerSummaryPrompt(snapshot, transport);
 
     const response = await callGenAI({
-      systemPrompt: 'You are MatchDay Copilot, a professional stadium operations intelligence system.',
+      systemPrompt: ORGANIZER_SUMMARY_SYSTEM_PROMPT,
       messages: [{ role: 'user', content: prompt }],
       persona: 'organizer',
       maxTokens: 1000,
     });
 
-    const totalDensity = Math.round(
-      (snapshot.totalOccupancy / snapshot.totalCapacity) * 100
-    );
+    const totalDensity = computeOverallDensityPercent(snapshot);
 
     res.json({
       generatedAt: new Date().toISOString(),
-      overallStatus: totalDensity >= 90 ? 'red' : totalDensity >= 75 ? 'amber' : 'green',
+      overallStatus: densityToStatus(totalDensity),
       summary: response.content,
       keyMetrics: [
         {
           label: 'Total Occupancy',
           value: `${snapshot.totalOccupancy.toLocaleString()} / ${snapshot.totalCapacity.toLocaleString()}`,
-          status: totalDensity >= 90 ? 'critical' : totalDensity >= 75 ? 'warning' : 'ok',
+          status: densityToMetricStatus(totalDensity),
         },
         ...snapshot.queues.slice(0, 4).map((q) => ({
           label: `${q.gateName} Queue`,
           value: q.waitTimeMinutes,
           unit: 'min',
           trend: q.trend === 'increasing' ? 'up' : q.trend === 'decreasing' ? 'down' : 'stable',
-          status: q.waitTimeMinutes >= 20 ? 'critical' : q.waitTimeMinutes >= 12 ? 'warning' : 'ok',
+          status: queueTimeToMetricStatus(q.waitTimeMinutes),
         })),
       ],
     });
@@ -65,7 +87,15 @@ router.get('/summary', chatRateLimiter, async (_req: Request, res: Response): Pr
   }
 });
 
-// POST /api/organizer/query — Natural language query
+// -----------------------------------------------
+// POST /api/organizer/query
+// -----------------------------------------------
+
+/**
+ * Answer a natural-language query from an organizer by reasoning over live data.
+ * Allows questions like "Which gates need extra staff in 30 min?" without
+ * the organizer needing to interpret raw numbers themselves.
+ */
 router.post(
   '/query',
   chatRateLimiter,
@@ -91,8 +121,7 @@ router.post(
       const prompt = buildOrganizerQueryPrompt(query, snapshot, transport);
 
       const response = await callGenAI({
-        systemPrompt:
-          'You are MatchDay Copilot, an AI operations assistant. Answer questions by reasoning over the provided live data.',
+        systemPrompt: ORGANIZER_QUERY_SYSTEM_PROMPT,
         messages: [{ role: 'user', content: prompt }],
         persona: 'organizer',
         maxTokens: 400,
@@ -111,7 +140,18 @@ router.post(
   }
 );
 
-// GET /api/organizer/sustainability — Carbon footprint analysis
+// -----------------------------------------------
+// GET /api/organizer/sustainability
+// -----------------------------------------------
+
+/**
+ * Generate a sustainability analysis for the current event.
+ * Estimates the transport carbon footprint from simulated ridership data and
+ * provides AI-generated suggestions to shift fans toward greener options.
+ *
+ * Carbon estimates are approximate and based on mock transport data.
+ * In production, connect to real ticketing/transport APIs for accurate figures.
+ */
 router.get(
   '/sustainability',
   apiRateLimiter,
@@ -121,14 +161,16 @@ router.get(
       const prompt = buildSustainabilityPrompt(transport, snapshot.totalOccupancy);
 
       const response = await callGenAI({
-        systemPrompt: 'You are MatchDay Copilot, a sustainability analysis assistant for large events.',
+        systemPrompt: ORGANIZER_SUSTAINABILITY_SYSTEM_PROMPT,
         messages: [{ role: 'user', content: prompt }],
         persona: 'organizer',
         useCache: true,
         maxTokens: 600,
       });
 
-      // Compute per-mode carbon estimates
+      // Compute per-mode carbon estimates from simulated ridership share.
+      // Crowding level is used as a proxy for mode share:
+      //   high → 30% of attendees, medium → 20%, low → 10%.
       const byMode: Record<string, number> = {};
       for (const route of transport) {
         const modeShare = route.crowdingLevel === 'high' ? 0.3 : route.crowdingLevel === 'medium' ? 0.2 : 0.1;

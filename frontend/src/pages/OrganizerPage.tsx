@@ -15,6 +15,7 @@ function StatusDot({ status }: { status: 'green' | 'amber' | 'red' }): JSX.Eleme
   };
   return (
     <span
+      role="img"
       className={`inline-block w-3 h-3 rounded-full ${config[status]}`}
       aria-label={`Status: ${status}`}
     />
@@ -103,6 +104,10 @@ export function OrganizerPage(): JSX.Element {
       <div className="relative bg-hero-gradient border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 pitch-lines" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-4 py-8">
+          <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/40 rounded-full px-3 py-1 mb-2">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" aria-hidden="true" />
+            <span className="text-amber-300 text-xs font-semibold uppercase tracking-widest">Organizer Control Room</span>
+          </div>
           <p className="text-gold-400 text-sm font-medium uppercase tracking-widest mb-1">
             Senior Organizer View
           </p>
@@ -111,6 +116,7 @@ export function OrganizerPage(): JSX.Element {
             AI-generated situation reports, natural-language queries over live data, and sustainability analytics.
           </p>
         </div>
+
       </div>
 
       {/* Live queue scoreboard strip */}
@@ -179,12 +185,13 @@ export function OrganizerPage(): JSX.Element {
             </div>
 
             {summaryLoading ? (
-              <div className="space-y-4" aria-busy="true" aria-label="Loading summary">
+              <div role="status" aria-busy="true" aria-label="Loading summary" className="space-y-4">
                 <div className="skeleton h-32 rounded-2xl" />
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {[1,2,3,4].map(i => <div key={i} className="skeleton h-20 rounded-xl" />)}
                 </div>
               </div>
+
             ) : summary ? (
               <div className="space-y-4 animate-fade-in">
                 {/* Status banner */}
@@ -353,7 +360,7 @@ export function OrganizerPage(): JSX.Element {
             </div>
 
             {sustainabilityLoading ? (
-              <div className="space-y-4" aria-busy="true">
+              <div role="status" aria-busy="true" aria-label="Loading sustainability data" className="space-y-4">
                 <div className="skeleton h-40 rounded-2xl" />
                 <div className="skeleton h-24 rounded-xl" />
               </div>
